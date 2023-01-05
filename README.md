@@ -1,31 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Landing Page Templates
 
-## Getting Started
+This is a compilation project of single page landing pages
+- your feedback and contributions are welcome!
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Live Pages Inside
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Here is a list of all templates inside:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- [Course Codex](https://coursecodex.vercel.app) - A site with free courses on several fields.
+- [SoftSkilla](https://softskilla.vercel.app) - A site with free tutorials, materials and mentorship for learning and mastering new skills
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+The [Home page](https://landingpagetemplates) is also a landing page of its own but it serves as a gateway to other pages.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## Learn More
+## Tech Stacks
 
-To learn more about Next.js, take a look at the following resources:
+- [Next.js](https://nextjs.org/docs) - learn about Next.js features and API in their documentation page.
+- [Tailwindcss](https://tailwindcss/learn) - an interactive tailwindcss tutorial.
+- [React Spring](https://reactspring) - documentation page for react sprint.
+- [React Icons](https://react-icons) - icons compilation for react from various sources.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
 ## Deploy on Vercel
 
