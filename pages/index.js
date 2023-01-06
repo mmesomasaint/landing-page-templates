@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { Transition } from '@headlessui/react'
 import { BsWhatsapp, BsLinkedin, BsTwitter, BsGithub } from 'react-icons/bs'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaWindowClose } from 'react-icons/fa'
