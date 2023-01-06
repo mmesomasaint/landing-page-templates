@@ -1,10 +1,17 @@
+import { useState } from 'react'
+import { Transition } from '@headlessui/react'
 import { BsWhatsapp, BsLinkedin, BsTwitter, BsGithub } from 'react-icons/bs'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { FaWindowClose } from 'react-icons/fa'
 
 export default function Home() {
+  const [isOpen, setIsOpen] = useState(false)
+  const onClick = () => setIsOpen((state) => !state)
+
   return (
     <div>
       <header className='w-full h-fit bg-white'>
-        <div className='py-4 px-8 flex justify-between items-center'>
+        <div className='relative max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full mx-auto py-4 flex justify-between items-center'>
           <div>
             <div className='border-2 rounded-md border-[#F28D52] p-1'>
               <span className='text-black text-3xl font-semibold leading-none text-center'>
@@ -15,38 +22,57 @@ export default function Home() {
               </span>
             </div>
           </div>
-          <div className=''>
-            <span className='text-xl font-medium leading-tight text-center text-[#F28D52] capitalize mr-6 underline'>
+          <div className='md:hidden'>
+            {isOpen ? (
+              <FaWindowClose
+                className='text-3xl text-[#F28D52]'
+                onClick={onClick}
+              />
+            ) : (
+              <GiHamburgerMenu
+                className='text-3xl text-black'
+                onClick={onClick}
+              />
+            )}
+          </div>
+          <div
+            className={`${
+              isOpen
+                ? 'block absolute w-full right-0 top-[100%] bg-white pr-10'
+                : 'hidden'
+            } md:w-auto md:static md:block flex flex-col items-end md:flex-none gap-5`}
+          >
+            <span className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-[#F28D52] capitalize md:mr-6 underline '>
               home
             </span>
-            <span className='text-xl font-medium leading-tight text-center text-black capitalize mx-6'>
+            <span className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:mx-6 '>
               pages
             </span>
-            <span className='text-xl font-medium leading-tight text-center text-black capitalize mx-6'>
+            <span className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:mx-6 '>
               about
             </span>
-            <span className='text-xl font-medium leading-tight text-center text-black capitalize ml-6'>
+            <span className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:ml-6 '>
               contact Us
             </span>
           </div>
         </div>
       </header>
       <div>
-        <section className='bg-white w-full h-[35rem] py-2'>
-          <div className='bg-transparent w-full h-full grid grid-cols-2 gap-5 place-items-center'>
-            <div className='text-left py-5 pl-10 border-l-[10px] border-l-[#F28D52]'>
+        <section className='bg-white w-full h-fit lg:h-[38rem] py-2'>
+          <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full mx-auto bg-transparent h-full grid grid-cols-1 lg:grid-cols-2 gap-5 place-items-center'>
+            <div className='text-center lg:text-left py-5 pl-0 lg:pl-10 lg:border-l-[10px] lg:border-l-[#F28D52]'>
               <span className='text-3xl font-medium leading-tight text-[#F28D52] capitalize ml-3'>
                 Lorem Ipsum
               </span>
-              <span className='block text-7xl font-extrabold leading-tight text-black'>
+              <span className='block text-6xl sm:text-7xl font-extrabold leading-tight sm:leading-[1.4] text-black'>
                 Landing Page Templates
               </span>
-              <div className='my-6'>
-                <button className='bg-[#F28D52] text-white text-base xl:text-lg font-semibold leading-[0] py-1 xl:py-2 px-3 xl:px-6 shadow-sm rounded-md'>
+              <div className='my-10'>
+                <button className='bg-[#F28D52] text-white text-xl sm:text-2xl lg:text-lg font-medium lg:font-semibold leading-none py-2 px-6 shadow-sm rounded-md'>
                   preview pages
                 </button>
-                <button className='text-xl font-semibold leading-none px-6 py-2 text-[#F28D52] rounded-md ml-6 group'>
-                  <span className='group-hover:underline'>
+                <button className='text-xl sm:text-2xl lg:text-xl font-medium lg:font-semibold leading-none px-6 py-2 text-[#F28D52] rounded-md md:ml-6 mt-6 sm:mt-0 group'>
+                  <span className='underline md:no-underline md:group-hover:underline'>
                     view source code
                   </span>
                 </button>
@@ -58,7 +84,7 @@ export default function Home() {
           </div>
         </section>
         <section className='w-full h-fit bg-[#F2F2F2]'>
-          <div className='grid grid-cols-3 gap-12 place-items-center p-12'>
+          <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 place-items-center p-12'>
             <div className='w-full flex flex-col gap-5 items-center'>
               <img
                 src='/imgs/single-page.png'
@@ -113,9 +139,9 @@ export default function Home() {
           </div>
         </section>
         <section className='bg-[#F28D52] h-fit pb-20'>
-          <figure className=''>
+          <figure className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full mx-auto'>
             <blockquote className='relative before:content-["\201C"] before:text-[10rem] before:relative before:font-extrabold before:leading-none before:top-10 before:left-20 before:text-gray-300'>
-              <div className='w-[70%] mx-auto h-full'>
+              <div className='w-[80%] mx-auto h-full'>
                 <span className='text-2xl font-semibold leading-tight text-white'>
                   The public is more familiar with bad design than good design.
                   It is, in effect, conditioned to prefer bad design, because
@@ -124,7 +150,7 @@ export default function Home() {
                 </span>
               </div>
             </blockquote>
-            <figcaption className='w-[65%] mx-auto text-right mt-4 text-xl italic text-white'>
+            <figcaption className='w-[80%] mx-auto text-right mt-4 text-xl italic text-white'>
               -- Paul Rand, graphic designer
             </figcaption>
           </figure>
@@ -132,22 +158,24 @@ export default function Home() {
         <section className='bg-[#353540] h-fit w-full'>
           <div className='w-full'>
             <div className='w-full pt-10 pb-20'>
-              <div className='w-full text-center text-[#F28D52] text-4xl font-bold leading-tight capitalize'>
-                Lorem ipsum dolor
+              <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full mx-auto sm:w-[80%]'>
+                <div className='w-full text-center text-[#F28D52] text-4xl font-bold leading-tight capitalize'>
+                  Landing pages
+                </div>
+                <span className='block w-full text-center text-2xl font-medium leading-tight text-[#F2F2F2] mt-2'>
+                  Etiam sodales erat et tincidunt porttitor. In odio lectus,
+                  consectetur tincidunt posuere at, elementum mattis ligula
+                </span>
               </div>
-              <span className='block w-full text-center text-2xl font-medium leading-tight text-[#F2F2F2] mt-2'>
-                Etiam sodales erat et tincidunt porttitor. In odio lectus,
-                consectetur tincidunt posuere at, elementum mattis ligula
-              </span>
             </div>
             <div className='w-full h-fit skew-y-6 bg-[#F2F2F2]'>
-              <div className='w-[80%] mx-auto grid grid-cols-2 gap-10 px-2 py-20 place-items-center bg-transparent -skew-y-6'>
+              <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full sm:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 py-20 place-items-center bg-transparent -skew-y-6'>
                 <div>
                   <div className='flex gap-5 items-center'>
-                    <div className='w-20 h-20 flex justify-center items-center text-5xl leading-none font-semibold bg-[#F28D52] text-white rounded-full shadow-lg'>
+                    <div className='w-16 sm:w-20 h-16 sm:h-20 flex justify-center items-center text-3xl sm:text-5xl leading-none font-semibold bg-[#F28D52] text-white rounded-full shadow-lg'>
                       1
                     </div>
-                    <span className='text-4xl font-bold leading-tight text-left text-[#F28D52] capitalize'>
+                    <span className='text-3xl sm:text-4xl font-bold leading-tight text-left text-[#F28D52] capitalize'>
                       Deli/fast
                     </span>
                   </div>
@@ -172,8 +200,8 @@ export default function Home() {
               </div>
             </div>
             <div className='w-full h-fit skew-y-6 bg-transparent'>
-              <div className='w-[80%] mx-auto grid grid-cols-2 gap-10 px-2 py-20 place-items-center bg-transparent -skew-y-6'>
-                <div>
+              <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full sm:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 py-20 place-items-center bg-transparent -skew-y-6'>
+                <div className='order-last lg:order-first'>
                   <img
                     src='/imgs/restaurant.jpg'
                     alt='restaurant'
@@ -182,10 +210,10 @@ export default function Home() {
                 </div>
                 <div>
                   <div className='flex gap-5 items-center'>
-                    <div className='w-20 h-20 flex justify-center items-center text-5xl leading-none font-semibold bg-[#F28D52] text-white rounded-full shadow-lg'>
+                    <div className='w-16 sm:w-20 h-16 sm:h-20 flex justify-center items-center text-3xl sm:text-5xl leading-none font-semibold bg-[#F28D52] text-white rounded-full shadow-lg'>
                       2
                     </div>
-                    <span className='text-4xl font-bold leading-tight text-left text-[#F28D52] capitalize'>
+                    <span className='text-3xl sm:text-4xl font-bold leading-tight text-left text-[#F28D52] capitalize'>
                       Restaurant
                     </span>
                   </div>
@@ -203,13 +231,13 @@ export default function Home() {
               </div>
             </div>
             <div className='w-full h-fit skew-y-6 bg-[#F2F2F2]'>
-              <div className='w-[80%] mx-auto grid grid-cols-2 gap-10 px-2 py-20 place-items-center bg-transparent -skew-y-6'>
+              <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full sm:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 py-20 place-items-center bg-transparent -skew-y-6'>
                 <div>
                   <div className='flex gap-5 items-center'>
-                    <div className='w-20 h-20 flex justify-center items-center text-5xl leading-none font-semibold bg-[#F28D52] text-white rounded-full shadow-lg'>
+                    <div className='w-16 sm:w-20 h-16 sm:h-20 flex justify-center items-center text-3xl sm:text-5xl leading-none font-semibold bg-[#F28D52] text-white rounded-full shadow-lg'>
                       3
                     </div>
-                    <span className='text-4xl font-bold leading-tight text-left text-[#F28D52] capitalize'>
+                    <span className='text-3xl sm:text-4xl font-bold leading-tight text-left text-[#F28D52] capitalize'>
                       Yoga Class
                     </span>
                   </div>
@@ -234,16 +262,16 @@ export default function Home() {
               </div>
             </div>
             <div className='w-full h-fit skew-y-6 bg-transparent'>
-              <div className='w-[80%] mx-auto grid grid-cols-2 gap-10 px-2 py-20 place-items-center bg-transparent -skew-y-6'>
-                <div>
+              <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full sm:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 py-20 place-items-center bg-transparent -skew-y-6'>
+                <div className='order-last lg:order-first'>
                   <img src='/imgs/hiking.jpg' alt='hiking' className='w-full' />
                 </div>
                 <div>
                   <div className='flex gap-5 items-center'>
-                    <div className='w-20 h-20 flex justify-center items-center text-5xl leading-none font-semibold bg-[#F28D52] text-white rounded-full shadow-lg'>
+                    <div className='w-16 sm:w-20 h-16 sm:h-20 flex justify-center items-center text-3xl sm:text-5xl leading-none font-semibold bg-[#F28D52] text-white rounded-full shadow-lg'>
                       4
                     </div>
-                    <span className='text-4xl font-bold leading-tight text-left text-[#F28D52] capitalize'>
+                    <span className='text-3xl sm:text-4xl font-bold leading-tight text-left text-[#F28D52] capitalize'>
                       Hiking
                     </span>
                   </div>
@@ -262,8 +290,8 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section>
-          <div className='w-[80%] mx-auto py-20'>
+        <section className='bg-white'>
+          <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full sm:w-[80%] mx-auto py-20'>
             <div>
               <div className='text-[#F28D52] text-xl font-medium leading-none text-center w-full capitalize'>
                 for more frontend dev tips &darr;
@@ -277,13 +305,13 @@ export default function Home() {
                 libero. Sed venenati iaculis facilisis elementum.
               </div>
             </div>
-            <div className=' w-[50%] mx-auto'>
+            <div className='w-[100%] md:w-[70%] xl:w-[50%] mx-auto'>
               <form>
                 <div className='w-full my-3'>
                   <input
                     name='email'
                     type='email'
-                    className='p-2 text-xl font-medium leading-tight bg-[#F2F2F2] outline-[#F28D52] w-full rounded-md'
+                    className='p-2 text-xl font-medium leading-tight bg-[#F2F2F2] outline outline-[#F28D52] w-full rounded-md placeholder:text-[#F28D52] placeholder:opacity-60'
                     placeholder='Email'
                     autoComplete='email'
                     required
@@ -300,24 +328,44 @@ export default function Home() {
         </section>
       </div>
       <footer className='bg-[#353540]'>
-        <div className='w-[80%] mx-auto grid grid-cols-2 gap-10 py-10'>
-          <div className='flex gap-5 justify-center items-start'>
+        <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full sm:w-[80%] mx-auto grid sm:grid-cols-1 lg:grid-cols-3 gap-10 pt-12 pb-5'>
+          <div className='flex gap-10 justify-start items-start sm:col-span-2'>
             <div>
-              <div className='text-[#F28D52] text-2xl font-medium'>tincidunt lectus</div>
-              <span className='block text-xl font-medium'>tortor vitae</span>
-              <span className='block text-xl font-medium'>risus massa</span>
-              <span className='block text-xl font-medium'>Ut pretium</span>
-              <span className='block text-xl font-medium'> augue in</span>
-              <span className='block text-xl font-medium'>sem non dui</span>
-              <span className='block text-xl font-medium'>Duis mattis</span>
+              <div className='text-[#F28D52] text-2xl font-medium capitalize'>
+                tincidunt lectus
+              </div>
+              <span className='block text-xl font-medium my-2'>
+                tortor vitae
+              </span>
+              <span className='block text-xl font-medium my-2'>
+                risus massa
+              </span>
+              <span className='block text-xl font-medium my-2'>Ut pretium</span>
+              <span className='block text-xl font-medium my-2'> augue in</span>
+              <span className='block text-xl font-medium my-2'>
+                sem non dui
+              </span>
+              <span className='block text-xl font-medium my-2'>
+                Duis mattis
+              </span>
             </div>
             <div>
-              <div className='text-[#F28D52] text-2xl font-medium'> ligula sit amet</div>
-              <span className='block text-xl font-medium'>risus massa</span>
-              <span className='block text-xl font-medium'>molestie eget</span>
-              <span className='block text-xl font-medium'>a ligula sit</span>
-              <span className='block text-xl font-medium'>commodo mi</span>
-              <span className='block text-xl font-medium'>vitae lobortis</span>
+              <div className='text-[#F28D52] text-2xl font-medium capitalize'>
+                ligula sit amet
+              </div>
+              <span className='block text-xl font-medium my-2'>
+                risus massa
+              </span>
+              <span className='block text-xl font-medium my-2'>
+                molestie eget
+              </span>
+              <span className='block text-xl font-medium my-2'>
+                a ligula sit
+              </span>
+              <span className='block text-xl font-medium my-2'>commodo mi</span>
+              <span className='block text-xl font-medium my-2'>
+                vitae lobortis
+              </span>
             </div>
           </div>
           <div>
@@ -328,7 +376,9 @@ export default function Home() {
             </div>
             <div className='my-7'>
               <form>
-              <div className='text-[#F28D52] text-2xl font-medium my-3'> Signup to my weekly newsletter</div>
+                <div className='text-[#F28D52] text-2xl font-medium my-3'>
+                  Signup to my weekly newsletter
+                </div>
                 <div className='flex'>
                   <input
                     type='email'
@@ -343,11 +393,8 @@ export default function Home() {
                 </div>
               </form>
             </div>
-            <div className='w-fit mx-auto flex justify-center gap-7 my-7 px-7 py-3 border-t border-t-[#F2F2F2]'>
-              <div className='text-[#F2F2F2] text-xl font-medium leading-tight'>
-                Contact:
-              </div>
-              <div className='flex justify-start gap-5'>
+            <div className='w-fit mx-auto flex justify-center gap-7 mt-12 px-7 py-5 border-t border-t-[#F2F2F2]'>
+              <div className='flex justify-start gap-10'>
                 <BsWhatsapp className='text-2xl text-[#BFB960]' />
                 <BsLinkedin className='text-2xl text-[#BFB960]' />
                 <BsTwitter className='text-2xl text-[#BFB960]' />
