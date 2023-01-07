@@ -1,16 +1,17 @@
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 import { BsWhatsapp, BsLinkedin, BsTwitter, BsGithub } from 'react-icons/bs'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaWindowClose } from 'react-icons/fa'
+import Image from 'next/image'
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false)
-  const onClick = () => setIsOpen((state) => !state)
+  const handleClick = useCallback(() => setIsOpen((state) => !state), [isOpen])
 
   return (
     <div>
       <header className='w-full h-fit bg-white'>
-        <div className='relative max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full mx-auto py-4 flex justify-between items-center'>
+        <div className='relative max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full md:w-[90%] lg:w-[80%] mx-auto py-4 flex justify-between items-center'>
           <div>
             <div className='border-2 rounded-md border-[#F28D52] p-1'>
               <span className='text-black text-3xl font-semibold leading-none text-center'>
@@ -25,12 +26,12 @@ export default function Home() {
             {isOpen ? (
               <FaWindowClose
                 className='text-3xl text-[#F28D52]'
-                onClick={onClick}
+                onClick={handleClick}
               />
             ) : (
               <GiHamburgerMenu
                 className='text-3xl text-black'
-                onClick={onClick}
+                onClick={handleClick}
               />
             )}
           </div>
@@ -58,7 +59,7 @@ export default function Home() {
       </header>
       <div>
         <section className='bg-white w-full h-fit lg:h-[38rem] py-2'>
-          <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full mx-auto bg-transparent h-full grid grid-cols-1 lg:grid-cols-2 gap-5 place-items-center'>
+          <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full md:w-[90%] lg:w-[80%] mx-auto bg-transparent h-full grid grid-cols-1 lg:grid-cols-2 gap-5 place-items-center'>
             <div className='text-center lg:text-left py-5 pl-0 lg:pl-10 lg:border-l-[10px] lg:border-l-[#F28D52]'>
               <span className='text-3xl font-medium leading-tight text-[#F28D52] capitalize ml-3'>
                 Lorem Ipsum
@@ -78,51 +79,44 @@ export default function Home() {
               </div>
             </div>
             <div className=''>
-              <img src='/imgs/store.jpg' alt='store' className='w-full' />
+              <Image width={500} height={500}  src='/imgs/store.jpg' alt='store' className='w-full' />
             </div>
           </div>
         </section>
         <section className='w-full h-fit bg-[#F2F2F2]'>
-          <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 place-items-center p-12'>
+          <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full md:w-[80%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 place-items-center py-12'>
             <div className='w-full flex flex-col gap-5 items-center'>
-              <img
+              <Image width={150} height={200} 
                 src='/imgs/single-page.png'
                 alt='single page'
-                className='w-[40%]'
               />
               <div>
                 <span className='block text-2xl font-bold text-center w-full text-[#F28D52] capitalise mb-4 mt-2'>
                   Single Page Apps
                 </span>
                 <span className='block text-base font-medium text-center w-full text-black'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                  sodales erat et tincidunt porttitor. In odio lectus,
-                  consectetur.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 </span>
               </div>
             </div>
             <div className='w-full flex flex-col gap-5 items-center'>
-              <img
+              <Image width={150} height={200} 
                 src='/imgs/editable.png'
                 alt='editable'
-                className='w-[40%]'
               />
               <div>
                 <span className='block text-2xl font-bold text-center w-full text-[#F28D52] capitalise mb-4 mt-2'>
                   Editable Pages
                 </span>
                 <span className='block text-base font-medium text-center w-full text-black'>
-                  Nam sit amet aliquet odio. Aenean nec pretium massa, nec
-                  tincidunt lorem. Duis mollis turpis et semper eleifend. Nullam
-                  at feugiat libero.
+                  Nam sit amet aliquet odio. Aenean nec pretium massa, . 
                 </span>
               </div>
             </div>
             <div className='w-full flex flex-col gap-5 items-center'>
-              <img
+              <Image width={150} height={200} 
                 src='/imgs/standard.png'
                 alt='standard'
-                className='w-[40%]'
               />
               <div>
                 <span className='block text-2xl font-bold text-center w-full text-[#F28D52] capitalise mb-4 mt-2'>
@@ -130,8 +124,7 @@ export default function Home() {
                 </span>
                 <span className='block text-base font-medium text-center w-full text-black'>
                   Etiam volutpat urna ac mauris interdum, euismod hendrerit
-                  nulla pretium. Integer hendrerit ornare diam, a scelerisque
-                  libero scelerisque eu.
+                  nulla pretium. 
                 </span>
               </div>
             </div>
@@ -157,7 +150,7 @@ export default function Home() {
         <section className='bg-[#353540] h-fit w-full'>
           <div className='w-full'>
             <div className='w-full pt-10 pb-20'>
-              <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full mx-auto sm:w-[80%]'>
+              <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full mx-auto md:w-[90%] lg:w-[80%]'>
                 <div className='w-full text-center text-[#F28D52] text-4xl font-bold leading-tight capitalize'>
                   Landing pages
                 </div>
@@ -168,7 +161,7 @@ export default function Home() {
               </div>
             </div>
             <div className='w-full h-fit skew-y-6 bg-[#F2F2F2]'>
-              <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full sm:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 py-20 place-items-center bg-transparent -skew-y-6'>
+              <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full md:w-[90%] lg:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 py-20 place-items-center bg-transparent -skew-y-6'>
                 <div>
                   <div className='flex gap-5 items-center'>
                     <div className='w-16 sm:w-20 h-16 sm:h-20 flex justify-center items-center text-3xl sm:text-5xl leading-none font-semibold bg-[#F28D52] text-white rounded-full shadow-lg'>
@@ -190,7 +183,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <img
+                  <Image width={500} height={500} 
                     src='/imgs/breakfast.jpg'
                     alt='breakfast'
                     className='w-full'
@@ -199,9 +192,9 @@ export default function Home() {
               </div>
             </div>
             <div className='w-full h-fit skew-y-6 bg-transparent'>
-              <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full sm:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 py-20 place-items-center bg-transparent -skew-y-6'>
+              <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full md:w-[90%] lg:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 py-20 place-items-center bg-transparent -skew-y-6'>
                 <div className='order-last lg:order-first'>
-                  <img
+                  <Image width={500} height={500} 
                     src='/imgs/restaurant.jpg'
                     alt='restaurant'
                     className='w-full'
@@ -230,7 +223,7 @@ export default function Home() {
               </div>
             </div>
             <div className='w-full h-fit skew-y-6 bg-[#F2F2F2]'>
-              <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full sm:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 py-20 place-items-center bg-transparent -skew-y-6'>
+              <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full md:w-[90%] lg:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 py-20 place-items-center bg-transparent -skew-y-6'>
                 <div>
                   <div className='flex gap-5 items-center'>
                     <div className='w-16 sm:w-20 h-16 sm:h-20 flex justify-center items-center text-3xl sm:text-5xl leading-none font-semibold bg-[#F28D52] text-white rounded-full shadow-lg'>
@@ -252,7 +245,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <img
+                  <Image width={500} height={500} 
                     src='/imgs/yogaclass.jpg'
                     alt='yoga class'
                     className='w-full'
@@ -261,9 +254,9 @@ export default function Home() {
               </div>
             </div>
             <div className='w-full h-fit skew-y-6 bg-transparent'>
-              <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full sm:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 py-20 place-items-center bg-transparent -skew-y-6'>
+              <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full md:w-[90%] lg:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 py-20 place-items-center bg-transparent -skew-y-6'>
                 <div className='order-last lg:order-first'>
-                  <img src='/imgs/hiking.jpg' alt='hiking' className='w-full' />
+                  <Image width={500} height={500}  src='/imgs/hiking.jpg' alt='hiking' className='w-full' />
                 </div>
                 <div>
                   <div className='flex gap-5 items-center'>
@@ -290,7 +283,7 @@ export default function Home() {
           </div>
         </section>
         <section className='bg-white'>
-          <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full sm:w-[80%] mx-auto py-20'>
+          <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full md:w-[90%] lg:w-[80%] mx-auto py-20'>
             <div>
               <div className='text-[#F28D52] text-xl font-medium leading-none text-center w-full capitalize'>
                 for more frontend dev tips &darr;
@@ -327,7 +320,7 @@ export default function Home() {
         </section>
       </div>
       <footer className='bg-[#353540]'>
-        <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full sm:w-[80%] mx-auto grid sm:grid-cols-1 lg:grid-cols-3 gap-10 pt-12 pb-5'>
+        <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full md:w-[90%] lg:w-[80%] mx-auto grid sm:grid-cols-1 lg:grid-cols-3 gap-10 pt-12 pb-5'>
           <div className='flex gap-10 justify-start items-start sm:col-span-2'>
             <div>
               <div className='text-[#F28D52] text-2xl font-medium capitalize'>
