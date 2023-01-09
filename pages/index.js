@@ -3,10 +3,14 @@ import { BsWhatsapp, BsLinkedin, BsTwitter, BsGithub } from 'react-icons/bs'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaWindowClose } from 'react-icons/fa'
 import Image from 'next/image'
+import {useRouter} from 'next/router'
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false)
   const handleClick = useCallback(() => setIsOpen((state) => !state), [isOpen])
+  const router = useRouter()
+  const contains = useCallback(path => router.pathname.includes(path), [])
+  console.log(router.asPath)
 
   return (
     <div>
@@ -42,23 +46,23 @@ export default function Home() {
                 : 'hidden'
             } md:w-auto md:static md:block flex flex-col items-end md:flex-none gap-5`}
           >
-            <span className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-[#F28D52] capitalize md:mr-6 underline '>
+            <a href='#home' className={`${contains('/#home') || router.pathname === '/' ? 'text-[#F28D52] underline' : 'text-black no-underline'} text-xl font-medium leading-tight block md:inline w-full text-right md:text-center capitalize md:mr-6`}>
               home
-            </span>
-            <span className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:mx-6 '>
+            </a>
+            <a href='#pages' className={`${contains('/#pages') ? 'text-[#F28D52] underline' : 'text-black no-underline'} text-xl font-medium leading-tight block md:inline w-full text-right md:text-center capitalize md:mx-6`}>
               pages
-            </span>
-            <span className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:mx-6 '>
+            </a>
+            <a href='#about' className={`${router.pathname === '/#about' ? 'text-[#F28D52] underline' : 'text-black no-underline'} text-xl font-medium leading-tight block md:inline w-full text-right md:text-center capitalize md:mx-6`}>
               about
-            </span>
-            <span className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:ml-6 '>
+            </a>
+            <a href='#contact' className={`${contains('/#contact') ? 'text-[#F28D52] underline' : 'text-black no-underline'} text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:ml-6`}>
               contact Us
-            </span>
+            </a>
           </div>
         </div>
       </header>
       <div>
-        <section className='bg-white w-full h-fit lg:h-[38rem] py-2'>
+        <section id='home' className='bg-white w-full h-fit lg:h-[38rem] py-2'>
           <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full md:w-[90%] lg:w-[80%] mx-auto bg-transparent h-full grid grid-cols-1 lg:grid-cols-2 gap-5 place-items-center'>
             <div className='text-center lg:text-left py-5 pl-0 lg:pl-10 lg:border-l-[10px] lg:border-l-[#F28D52]'>
               <span className='text-3xl font-medium leading-tight text-[#F28D52] capitalize ml-3'>
@@ -83,7 +87,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className='w-full h-fit bg-[#F2F2F2]'>
+        <section id='about' className='w-full h-fit bg-[#F2F2F2]'>
           <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full md:w-[80%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 place-items-center py-12'>
             <div className='w-full flex flex-col gap-5 items-center'>
               <Image width={150} height={200} 
@@ -147,7 +151,7 @@ export default function Home() {
             </figcaption>
           </figure>
         </section>
-        <section className='bg-[#353540] h-fit w-full'>
+        <section id='pages' className='bg-[#353540] h-fit w-full'>
           <div className='w-full'>
             <div className='w-full pt-10 pb-20'>
               <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full mx-auto md:w-[90%] lg:w-[80%]'>
@@ -385,7 +389,7 @@ export default function Home() {
                 </div>
               </form>
             </div>
-            <div className='w-fit mx-auto flex justify-center gap-7 mt-12 px-7 py-5 border-t border-t-[#F2F2F2]'>
+            <div id='contact' className='w-fit mx-auto flex justify-center gap-7 mt-12 px-7 py-5 border-t border-t-[#F2F2F2]'>
               <div className='flex justify-start gap-10'>
                 <BsWhatsapp className='text-2xl text-[#BFB960]' />
                 <BsLinkedin className='text-2xl text-[#BFB960]' />
