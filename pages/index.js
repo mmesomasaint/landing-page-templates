@@ -3,14 +3,10 @@ import { BsWhatsapp, BsLinkedin, BsTwitter, BsGithub } from 'react-icons/bs'
 import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaWindowClose } from 'react-icons/fa'
 import Image from 'next/image'
-import {useRouter} from 'next/router'
 
 export default function Home() {
   const [isOpen, setIsOpen] = useState(false)
   const handleClick = useCallback(() => setIsOpen((state) => !state), [isOpen])
-  const router = useRouter()
-  const contains = useCallback(path => router.pathname.includes(path), [])
-  console.log(router.asPath)
 
   return (
     <div>
@@ -46,16 +42,16 @@ export default function Home() {
                 : 'hidden'
             } md:w-auto md:static md:block flex flex-col items-end md:flex-none gap-5`}
           >
-            <a href='#home' className={`${contains('/#home') || router.pathname === '/' ? 'text-[#F28D52] underline' : 'text-black no-underline'} text-xl font-medium leading-tight block md:inline w-full text-right md:text-center capitalize md:mr-6`}>
+            <a href='#home' className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-[#F28D52] capitalize md:mr-6 underline '>
               home
             </a>
-            <a href='#pages' className={`${contains('/#pages') ? 'text-[#F28D52] underline' : 'text-black no-underline'} text-xl font-medium leading-tight block md:inline w-full text-right md:text-center capitalize md:mx-6`}>
+            <a href='#pages' className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:mx-6 '>
               pages
             </a>
-            <a href='#about' className={`${router.pathname === '/#about' ? 'text-[#F28D52] underline' : 'text-black no-underline'} text-xl font-medium leading-tight block md:inline w-full text-right md:text-center capitalize md:mx-6`}>
+            <a href='#about' className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:mx-6 '>
               about
             </a>
-            <a href='#contact' className={`${contains('/#contact') ? 'text-[#F28D52] underline' : 'text-black no-underline'} text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:ml-6`}>
+            <a href='contact us' className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:ml-6 '>
               contact Us
             </a>
           </div>
