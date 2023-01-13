@@ -12,52 +12,55 @@ export default function Dellbreak() {
     <div className={style.body}>
       <header>
         <div className='w-full bg-transparent'>
-          <div className='relative rounded-b-[80px] bg-[#1A1615] pt-20 pb-5 px-[5%] w-[80%] mx-auto before:z-[-1] before:absolute before:w-[90%] before:ml-[-45%] before:bg-inherit before:h-full before:top-0 before:left-[50%] before:shadow-2xl'>
-            <div className='w-full text-center mb-10'>
-              <span className='text-6xl font-normal text-[#C18A73]'>
-                Deli//
-              </span>
-              <span className='text-6xl font-extralight text-[#C18A73]'>
-                Break
-              </span>
-            </div>
-            <div className='w-full text-center my-1 flex gap-7 justify-between text-[#D9D8D7]'>
-              <div className='flex justify-evenly items-center gap-6'>
-                <span className='text-sm font-normal hover:scale-95 cursor-pointer capitalize'>
-                  Beverages
+          <div className='relative w-[80%] mx-auto'>
+            <div className='absolute w-full h-full scale-[.8] shadow-3xl top-0 left-0' />
+            <div className='relative rounded-b-[80px] bg-[#404040] pt-20 pb-5 px-[5%]'>
+              <div className='w-full text-center mb-10'>
+                <span className='text-6xl font-normal text-[#C18A73]'>
+                  Deli//
                 </span>
-                <span className='text-sm font-normal hover:scale-95 cursor-pointer capitalize'>
-                  Deserts
-                </span>
-                <span className='text-sm font-normal hover:scale-95 cursor-pointer capitalize'>
-                  Promotions
-                </span>
-                <span className='text-sm font-normal hover:scale-95 cursor-pointer capitalize'>
-                  Star Program
-                </span>
-                <span className='text-sm font-normal hover:scale-95 cursor-pointer capitalize'>
-                  Branches
-                </span>
-                <span className='text-sm font-normal hover:scale-95 cursor-pointer capitalize'>
-                  Contact
+                <span className='text-6xl font-extralight text-[#C18A73]'>
+                  Break
                 </span>
               </div>
-              <div className='flex justify-evenly items-center gap-4'>
-                <div className='flex justify-around gap-3 items-center'>
-                  <BsInstagram className='text-lg hover:scale-95 cursor-pointer' />
-                  <BsFacebook className='text-lg hover:scale-95 cursor-pointer' />
-                  <BsYoutube className='text-lg hover:scale-95 cursor-pointer' />
+              <div className='w-full text-center my-1 flex gap-7 justify-between text-white'>
+                <div className='flex justify-evenly items-center gap-6'>
+                  <span className='text-sm font-normal hover:scale-95 cursor-pointer capitalize'>
+                    Beverages
+                  </span>
+                  <span className='text-sm font-normal hover:scale-95 cursor-pointer capitalize'>
+                    Deserts
+                  </span>
+                  <span className='text-sm font-normal hover:scale-95 cursor-pointer capitalize'>
+                    Promotions
+                  </span>
+                  <span className='text-sm font-normal hover:scale-95 cursor-pointer capitalize'>
+                    Star Program
+                  </span>
+                  <span className='text-sm font-normal hover:scale-95 cursor-pointer capitalize'>
+                    Branches
+                  </span>
+                  <span className='text-sm font-normal hover:scale-95 cursor-pointer capitalize'>
+                    Contact
+                  </span>
                 </div>
-                <div className='text-sm font-normal'>|</div>
-                <div className='text-sm font-normal'>
-                  Quality and tast // Guaranteed
+                <div className='flex justify-evenly items-center gap-4'>
+                  <div className='flex justify-around gap-3 items-center'>
+                    <BsInstagram className='text-lg hover:scale-95 cursor-pointer' />
+                    <BsFacebook className='text-lg hover:scale-95 cursor-pointer' />
+                    <BsYoutube className='text-lg hover:scale-95 cursor-pointer' />
+                  </div>
+                  <div className='text-sm font-normal'>|</div>
+                  <div className='text-sm font-normal'>
+                    Quality and tast // Guaranteed
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </header>
-      <div>
+      <div className='z-10'>
         <div className="h-[43rem] w-full bg-[url('/imgs/choco-cake.jpg')] bg-no-repeat bg-cover bg-right">
           <div className='bg-gradient-to-br from-[transparent] via-[transparent] to-[rgba(242,235,233)] flex justify-end items-center h-full px-24'>
             <div className='flex flex-col gap-10 h-[75%] w-[35%]'>
@@ -80,68 +83,73 @@ export default function Dellbreak() {
           </div>
         </div>
         <div className='bg-[#F2EBE9]'>
-          <div className=' w-[75%] mx-auto pt-[10%]'>
+          <div className='w-[75%] mx-auto pt-[10%]'>
             <div className='grid grid-cols-2 gap-0'>
-              <div className='p-14 pt-16 bg-white rounded-l-[80px]'>
-                <div className='mb-3'>
-                  <h3 className='text-3xl font-semibold'>
-                    Healthy and delicious
-                  </h3>
-                  <p className='text-2xl font-light'>
-                    Taste delicious smoothies with seasonal fruits
-                  </p>
-                </div>
-                <div className='mb-6'>
-                  <p className='text-xs font-medium'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla ornare ac sapien eget pharetra. Nullam leo est,
-                    ultricies id lacus nec, lobortis pretium eros. Pellentesque
-                    in pharetra augue. Vivamus condimentum malesuada neque ac
-                    imperdiet. Pellentesque nec lobortis ant
-                  </p>
-                </div>
-                <div className='mb-4'>
-                  <p className='text-[#C18A73] text-2xl font-normal leading-tight'>
-                    Traditional fruit smoothie only $6
-                  </p>
-                </div>
-                <div className='mb-10'>
-                  <ul className='my-4'>
-                    {[
-                      'Extra Oaths',
-                      'Extra Fruit',
-                      'Extra Creams',
-                      'Extra Topping',
-                    ].map((word) => (
-                      <li
-                        key={word}
-                        className='flex w-full justify-start items-center gap-1 text-sm font-semibold'
-                      >
-                        <BsSuitDiamondFill />
-                        <p>{word}</p>
-                      </li>
-                    ))}
-                  </ul>
-                  <button className='py-2 px-5 capitalize bg-[#C18A73] text-white text-xl font-normal leading-none rounded-full'>
-                    Buy Now
-                  </button>
-                </div>
-                <div>
-                  <p className='text-[0.6rem] font-lihgt leading-tight'>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Nulla ornare ac sapien eget pharetra. Nullam leo est,
-                    ultricies id lacus nec, lobortis pretium eros. Pellentesque
-                    in pharetra augue.
-                  </p>
+              <div className='relative'>
+                <div className='absolute w-full h-full scale-[.65] shadow-3xl top-0 -left-16 bg-white' />
+                <div className='relative p-14 pt-16 bg-white rounded-l-[80px] w-full h-full'>
+                  <div className='mb-3'>
+                    <h3 className='text-3xl font-semibold'>
+                      Healthy and delicious
+                    </h3>
+                    <p className='text-2xl font-light'>
+                      Taste delicious smoothies with seasonal fruits
+                    </p>
+                  </div>
+                  <div className='mb-6'>
+                    <p className='text-xs font-medium'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Nulla ornare ac sapien eget pharetra. Nullam leo est,
+                      ultricies id lacus nec, lobortis pretium eros.
+                      Pellentesque in pharetra augue. Vivamus condimentum
+                      malesuada neque ac imperdiet. Pellentesque nec lobortis
+                      ant
+                    </p>
+                  </div>
+                  <div className='mb-4'>
+                    <p className='text-[#C18A73] text-2xl font-normal leading-tight'>
+                      Traditional fruit smoothie only $6
+                    </p>
+                  </div>
+                  <div className='mb-10'>
+                    <ul className='my-4'>
+                      {[
+                        'Extra Oaths',
+                        'Extra Fruit',
+                        'Extra Creams',
+                        'Extra Topping',
+                      ].map((word) => (
+                        <li
+                          key={word}
+                          className='flex w-full justify-start items-center gap-1 text-sm font-semibold'
+                        >
+                          <BsSuitDiamondFill />
+                          <p>{word}</p>
+                        </li>
+                      ))}
+                    </ul>
+                    <button className='py-2 px-5 capitalize bg-[#C18A73] text-white text-xl font-normal leading-none rounded-full'>
+                      Buy Now
+                    </button>
+                  </div>
+                  <div>
+                    <p className='text-[0.6rem] font-lihgt leading-tight'>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Nulla ornare ac sapien eget pharetra. Nullam leo est,
+                      ultricies id lacus nec, lobortis pretium eros.
+                      Pellentesque in pharetra augue.
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div>
+              <div className='relative w-full h-full'>
+                <div className='absolute w-full h-full scale-[.55] shadow-s-3xl top-10 -left-[5.7rem] bg-white rounded-full' />
                 <Image
                   src='/imgs/Smoothie.jpg'
                   width={500}
                   height={500}
                   alt='smoothie'
-                  className='rounded-r-[80px]'
+                  className='relative rounded-r-[80px]'
                 />
               </div>
             </div>
@@ -155,91 +163,95 @@ export default function Dellbreak() {
         <div className="h-[66rem] w-full bg-[url('/imgs/blender-with-orange.jpg')] bg-no-repeat bg-cover bg-right transform scale-x-[-1]">
           <div className='bg-gradient-radial from-[transparent] via-[rgba(242,235,233,0.2)] to-[rgba(242,235,233)] w-full h-full transform scale-x-[-1] '>
             <div className='flex justify-end items-center h-full px-24 w-[80%] mx-auto'>
-            <div className='h-[25%] w-[45%]'>
-              <div className='mb-3'>
-                <span className='font-semibold text-3xl leading-tight'>
-                  Beverage Courses
-                </span>
+              <div className='h-[25%] w-[45%]'>
+                <div className='mb-3'>
+                  <span className='font-semibold text-3xl leading-tight'>
+                    Beverage Courses
+                  </span>
+                </div>
+                <div className='mb-10'>
+                  <span className='font-light text-3xl leading-tight'>
+                    Learn how to combine fruits and vegetables in the right way
+                  </span>
+                </div>
+                <div className='flex gap-5 flex-col'>
+                  <input
+                    type='text'
+                    placeholder='Name'
+                    autoComplete='name'
+                    name='name'
+                    className='placeholder:text-[#1A1615] rounded-full py-2 px-3 bg-white text-[#1A1615] text-sm font-medium'
+                  />
+                  <input
+                    type='text'
+                    placeholder='Email'
+                    autoComplete='email'
+                    name='email'
+                    className='placeholder:text-[#1A1615] rounded-full py-2 px-3 bg-white text-[#1A1615] text-sm font-medium'
+                  />
+                  <button className='rounded-full mt-4 mb-2 py-2 w-[50%] mx-auto bg-[#C18A73] text-white text-base font-medium leading-none shadow-md'>
+                    Enroll now
+                  </button>
+                </div>
               </div>
-              <div className='mb-10'>
-                <span className='font-light text-3xl leading-tight'>
-                  Learn how to combine fruits and vegetables in the right way
-                </span>
-              </div>
-              <div className='flex gap-5 flex-col'>
-                <input
-                  type='text'
-                  placeholder='Name'
-                  autoComplete='name'
-                  name='name'
-                  className='placeholder:text-[#1A1615] rounded-full py-2 px-3 bg-white text-[#1A1615] text-sm font-medium'
-                />
-                <input
-                  type='text'
-                  placeholder='Email'
-                  autoComplete='email'
-                  name='email'
-                  className='placeholder:text-[#1A1615] rounded-full py-2 px-3 bg-white text-[#1A1615] text-sm font-medium'
-                />
-                <button className='rounded-full mt-4 mb-2 py-2 w-[50%] mx-auto bg-[#C18A73] text-white text-base font-medium leading-none shadow-md'>
-                  Enroll now
-                </button>
-              </div>
-            </div>
             </div>
           </div>
         </div>
         <div className='bg-gradient-to-t from-[#C18A73] via-[#D9C1B8] to-[#F2EBE9]'>
           <div>
-            <div className=' w-[70%] mx-auto pt-[10%]'>
+            <div className='w-[70%] mx-auto pt-[10%]'>
               <div className='grid grid-cols-7 gap-0'>
-                <div className='pl-14 pr-24 pt-16 bg-white rounded-l-[80px] col-span-4'>
-                  <div className='mb-3'>
-                    <h3 className='text-3xl font-semibold'>about us</h3>
-                    <p className='text-2xl font-light'>
-                      Passionate about always offering you the best
-                    </p>
-                  </div>
-                  <div className='mb-6'>
-                    <p className='text-xs font-medium'>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Nulla ornare ac sapien eget pharetra. Nullam leo est,
-                      ultricies id lacus nec, lobortis pretium eros.
-                      Pellentesque in pharetra augue. Vivamus condimentum
-                      malesuada neque ac imperdiet. Pellentesque nec lobortis
-                      ant
-                    </p>
-                  </div>
-                  <div className='mb-10'>
-                    <p className='text-xs font-medium'>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Nulla ornare ac sapien eget pharetra. Nullam leo est,
-                      ultricies id lacus nec, lobortis pretium eros.
-                      Pellentesque in pharetra augue. Vivamus condimentum
-                      malesuada neque ac imperdiet. Pellentesque nec lobortis
-                      ant
-                    </p>
-                  </div>
-                  <div className='mb-10'>
-                    <button className='py-2 w-[70%] capitalize bg-[#C18A73] text-white text-xl font-normal leading-none rounded-full'>
-                      Read more
-                    </button>
-                  </div>
-                  <div>
-                    <p className='text-[0.6rem] font-lihgt leading-tight'>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Nulla ornare ac sapien eget pharetra. Nullam leo est,
-                      ultricies id lacus nec
-                    </p>
+                <div className='relative col-span-4'>
+                  <div className='absolute w-full h-full scale-[.65] shadow-3xl top-0 -left-16 bg-white' />
+                  <div className='relative pl-14 pr-24 pt-16 bg-white rounded-l-[80px] w-full h-full'>
+                    <div className='mb-3'>
+                      <h3 className='text-3xl font-semibold'>about us</h3>
+                      <p className='text-2xl font-light'>
+                        Passionate about always offering you the best
+                      </p>
+                    </div>
+                    <div className='mb-6'>
+                      <p className='text-xs font-medium'>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nulla ornare ac sapien eget pharetra. Nullam leo est,
+                        ultricies id lacus nec, lobortis pretium eros.
+                        Pellentesque in pharetra augue. Vivamus condimentum
+                        malesuada neque ac imperdiet. Pellentesque nec lobortis
+                        ant
+                      </p>
+                    </div>
+                    <div className='mb-10'>
+                      <p className='text-xs font-medium'>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nulla ornare ac sapien eget pharetra. Nullam leo est,
+                        ultricies id lacus nec, lobortis pretium eros.
+                        Pellentesque in pharetra augue. Vivamus condimentum
+                        malesuada neque ac imperdiet. Pellentesque nec lobortis
+                        ant
+                      </p>
+                    </div>
+                    <div className='mb-10'>
+                      <button className='py-2 w-[70%] capitalize bg-[#C18A73] text-white text-xl font-normal leading-none rounded-full'>
+                        Read more
+                      </button>
+                    </div>
+                    <div>
+                      <p className='text-[0.6rem] font-lihgt leading-tight'>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nulla ornare ac sapien eget pharetra. Nullam leo est,
+                        ultricies id lacus nec
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div className='col-span-3'>
+                <div className='relative col-span-3'>
+                  <div className='absolute w-full h-full scale-[.55] shadow-s-3xl top-10 -left-[5.7rem] bg-white rounded-full' />
                   <Image
                     src='/imgs/female-chef.jpg'
                     width={400}
                     height={400}
                     alt='smoothie'
-                    className='rounded-r-[80px]'
+                    className='relative rounded-r-[80px]'
                   />
                 </div>
               </div>
@@ -252,7 +264,7 @@ export default function Dellbreak() {
           </div>
           <div>
             <div className='pt-[10%]'>
-              <div className='grid grid-cols-11 gap-0'>
+              <div className='grid grid-cols-11 gap-3'>
                 <div className='col-span-8 grid grid-cols-8 gap-0'>
                   <div className='px-[30%] pt-10 bg-white col-span-5'>
                     <div className='mb-3'>
@@ -292,13 +304,14 @@ export default function Dellbreak() {
                       </button>
                     </div>
                   </div>
-                  <div className='col-span-3'>
+                  <div className='relative col-span-3'>
+                    <div className='absolute w-full h-full scale-[.65] shadow-3xl top-5 -right-3 bg-white' />
                     <Image
                       src='/imgs/milkshake.jpg'
                       width={340}
                       height={340}
                       alt='smoothie'
-                      className='rounded-r-[80px]'
+                      className='relative rounded-r-[80px]'
                     />
                   </div>
                 </div>
@@ -418,7 +431,9 @@ export default function Dellbreak() {
           </div>
           <footer>
             <div>
-              <div className='relative rounded-t-[80px] bg-[#1A1615] pt-20 pb-5 px-[5%] w-[80%] mx-auto'>
+              <div className='relative w-[80%] mx-auto'>
+            <div className='absolute w-full h-full scale-[.8] shadow-3xl -top-4 left-0' />
+              <div className='relative rounded-t-[80px] bg-[#1A1615] pt-20 pb-5 px-[5%]'>
                 <div className='mb-7'>
                   <div className='w-full text-center mb-4'>
                     <span className='text-6xl font-normal text-[#C18A73] '>
@@ -500,7 +515,7 @@ export default function Dellbreak() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div></div>
             </div>
           </footer>
         </div>
