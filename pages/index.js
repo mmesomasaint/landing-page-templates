@@ -4,6 +4,7 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaWindowClose } from 'react-icons/fa'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
+import Load from '../components/load'
 
 export default function Home() {
   const router = useRouter()
@@ -44,16 +45,28 @@ export default function Home() {
                 : 'hidden'
             } md:w-auto md:static md:block flex flex-col items-end md:flex-none gap-5`}
           >
-            <a href='#home' className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-[#F28D52] capitalize md:mr-6 underline '>
+            <a
+              href='#home'
+              className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-[#F28D52] capitalize md:mr-6 underline '
+            >
               home
             </a>
-            <a href='#pages' className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:mx-6 '>
+            <a
+              href='#pages'
+              className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:mx-6 '
+            >
               pages
             </a>
-            <a href='#about' className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:mx-6 '>
+            <a
+              href='#about'
+              className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:mx-6 '
+            >
               about
             </a>
-            <a href='contact us' className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:ml-6 '>
+            <a
+              href='contact us'
+              className='text-xl font-medium leading-tight block md:inline w-full text-right md:text-center text-black capitalize md:ml-6 '
+            >
               contact Us
             </a>
           </div>
@@ -81,14 +94,22 @@ export default function Home() {
               </div>
             </div>
             <div className=''>
-              <Image width={500} height={500}  src='/imgs/store.jpg' alt='store' className='w-full' />
+              <Image
+                width={500}
+                height={500}
+                src='/imgs/store.jpg'
+                alt='store'
+                className='w-full'
+              />
             </div>
           </div>
         </section>
         <section id='about' className='w-full h-fit bg-[#F2F2F2]'>
           <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full md:w-[80%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 place-items-center py-12'>
             <div className='w-full flex flex-col gap-5 items-center'>
-              <Image width={150} height={200} 
+              <Image
+                width={150}
+                height={200}
                 src='/imgs/single-page.png'
                 alt='single page'
               />
@@ -97,12 +118,14 @@ export default function Home() {
                   Single Page Apps
                 </span>
                 <span className='block text-base font-medium text-center w-full text-black'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </span>
               </div>
             </div>
             <div className='w-full flex flex-col gap-5 items-center'>
-              <Image width={150} height={200} 
+              <Image
+                width={150}
+                height={200}
                 src='/imgs/editable.png'
                 alt='editable'
               />
@@ -111,12 +134,14 @@ export default function Home() {
                   Editable Pages
                 </span>
                 <span className='block text-base font-medium text-center w-full text-black'>
-                  Nam sit amet aliquet odio. Aenean nec pretium massa, . 
+                  Nam sit amet aliquet odio. Aenean nec pretium massa, .
                 </span>
               </div>
             </div>
             <div className='w-full flex flex-col gap-5 items-center'>
-              <Image width={150} height={200} 
+              <Image
+                width={150}
+                height={200}
                 src='/imgs/standard.png'
                 alt='standard'
               />
@@ -126,7 +151,7 @@ export default function Home() {
                 </span>
                 <span className='block text-base font-medium text-center w-full text-black'>
                   Etiam volutpat urna ac mauris interdum, euismod hendrerit
-                  nulla pretium. 
+                  nulla pretium.
                 </span>
               </div>
             </div>
@@ -179,13 +204,18 @@ export default function Home() {
                     Nullam at feugiat libero. Sed venenati
                   </div>
                   <div className='my-7 mx-6'>
-                    <button className='text-2xl font-semibold px-5  hover:scale-105 text-white bg-[#F28D52] rounded-md' onClick={() => router.push('/preview/dellbreak')}>
+                    <button
+                      className='text-2xl font-semibold px-5  hover:scale-105 text-white bg-[#F28D52] rounded-md'
+                      onClick={() => router.push('/preview/dellbreak')}
+                    >
                       Preview
                     </button>
                   </div>
                 </div>
                 <div>
-                  <Image width={500} height={500} 
+                  <Image
+                    width={500}
+                    height={500}
                     src='/imgs/breakfast.jpg'
                     alt='breakfast'
                     className='w-full'
@@ -196,7 +226,9 @@ export default function Home() {
             <div className='w-full h-fit skew-y-6 bg-transparent'>
               <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full md:w-[90%] lg:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 py-20 place-items-center bg-transparent -skew-y-6'>
                 <div className='order-last lg:order-first'>
-                  <Image width={500} height={500} 
+                  <Image
+                    width={500}
+                    height={500}
                     src='/imgs/restaurant.jpg'
                     alt='restaurant'
                     className='w-full'
@@ -247,7 +279,9 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <Image width={500} height={500} 
+                  <Image
+                    width={500}
+                    height={500}
                     src='/imgs/yogaclass.jpg'
                     alt='yoga class'
                     className='w-full'
@@ -258,7 +292,13 @@ export default function Home() {
             <div className='w-full h-fit skew-y-6 bg-transparent'>
               <div className='max-w-[80rem] px-5 sm:px-10 xl:px-0 w-full md:w-[90%] lg:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 py-20 place-items-center bg-transparent -skew-y-6'>
                 <div className='order-last lg:order-first'>
-                  <Image width={500} height={500}  src='/imgs/hiking.jpg' alt='hiking' className='w-full' />
+                  <Image
+                    width={500}
+                    height={500}
+                    src='/imgs/hiking.jpg'
+                    alt='hiking'
+                    className='w-full'
+                  />
                 </div>
                 <div>
                   <div className='flex gap-5 items-center'>
@@ -387,7 +427,10 @@ export default function Home() {
                 </div>
               </form>
             </div>
-            <div id='contact' className='w-fit mx-auto flex justify-center gap-7 mt-12 px-7 py-5 border-t border-t-[#F2F2F2]'>
+            <div
+              id='contact'
+              className='w-fit mx-auto flex justify-center gap-7 mt-12 px-7 py-5 border-t border-t-[#F2F2F2]'
+            >
               <div className='flex justify-start gap-10'>
                 <BsWhatsapp className='text-2xl text-[#BFB960]' />
                 <BsLinkedin className='text-2xl text-[#BFB960]' />
