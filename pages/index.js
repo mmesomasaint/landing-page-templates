@@ -168,7 +168,7 @@ export default function Home() {
                       1
                     </div>
                     <span className='text-3xl sm:text-4xl font-bold leading-tight text-left text-[#F28D52] capitalize'>
-                      Deli/fast
+                      Deli//Break
                     </span>
                   </div>
                   <div className='text-black text-xl font-semibold leading-tight my-7 ml-6'>
