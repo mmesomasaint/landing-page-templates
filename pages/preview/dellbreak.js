@@ -1,29 +1,52 @@
+import { useCallback, useState } from 'react'
 import {
   BsFacebook,
   BsInstagram,
   BsYoutube,
   BsSuitDiamondFill,
 } from 'react-icons/bs'
+import { FaHamburger, FaWindowClose } from 'react-icons/fa'
 import Image from 'next/image'
 import style from './dellbreak.module.css'
 
 export default function Dellbreak() {
+  const [isOpen, setIsOpen] = useState(false)
+  const handleNav = useCallback(() => setIsOpen((state) => !state), [isOpen])
   return (
     <div className={style.body}>
       <header>
         <div className='w-full bg-transparent'>
           <div className='relative max-w-[90rem] w-[97%] lg:w-[95%] xl:w-[80%] mx-auto'>
-            <div className='absolute w-full h-full scale-[.8] shadow-3xl top-0 left-0' />
+            <div className='absolute w-full h-full scale-[.7] md:scale-[.8] shadow-3xl top-0 left-0' />
             <div className='relative rounded-b-[80px] bg-[#404040] pt-20 pb-5 px-[5%]'>
-              <div className='w-full text-center mb-10'>
-                <span className='text-4xl sm:text-6xl font-normal text-[#C18A73]'>
-                  Deli//
-                </span>
-                <span className='text-4xl sm:text-6xl font-extralight text-[#C18A73]'>
-                  Break
-                </span>
+              <div className='w-full text-auto text-center mb-6 md:mb-10 flex md:block justify-between items-center gap-5'>
+                <div>
+                  <span className='text-4xl sm:text-6xl font-normal text-[#C18A73]'>
+                    Deli//
+                  </span>
+                  <span className='text-4xl sm:text-6xl font-extralight text-[#C18A73]'>
+                    Break
+                  </span>
+                </div>
+                <div className='block md:hidden'>
+                  {isOpen ? (
+                    <FaWindowClose
+                      className='text-3xl text-[#C18A73]'
+                      onClick={handleNav}
+                    />
+                  ) : (
+                    <FaHamburger
+                      className='text-3xl text-white'
+                      onClick={handleNav}
+                    />
+                  )}
+                </div>
               </div>
-              <div className='w-full text-center my-1 flex gap-7 justify-center lg:justify-between text-white'>
+              <div
+                className={`${
+                  isOpen ? 'block' : 'hidden'
+                } w-full text-center my-1 md:flex gap-7 justify-center lg:justify-between text-white`}
+              >
                 <div className='flex flex-col sm:flex-row justify-evenly items-center gap-6'>
                   <span className='text-sm font-normal hover:scale-95 cursor-pointer capitalize'>
                     Beverages
