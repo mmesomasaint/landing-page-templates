@@ -4,7 +4,6 @@ import { GiHamburgerMenu } from 'react-icons/gi'
 import { FaWindowClose } from 'react-icons/fa'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import Load from '../components/load'
 
 export default function Home() {
   const router = useRouter()
